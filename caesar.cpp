@@ -19,6 +19,7 @@ void encrypt(string input_string){
 }
 
 int main(){
+    cout << "What would you like to encrypt? ";
     string to_encrypt;
     cin >> to_encrypt;
     encrypt(to_encrypt);
