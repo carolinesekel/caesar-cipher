@@ -13,8 +13,8 @@ func main() {
 	cipher := "fghijklmnopqrstuvwxyzabcde"
 
 	reader := bufio.NewReader(os.Stdin)
-	println("What would you like to encrypt?")
-	inputString, _ := reader.ReadString('\n') //inputstring will include the deliniator
+	print("What would you like to encrypt? ")
+	inputString, _ := reader.ReadString(' ') //inputstring will include the deliniator
 	inputString = inputString[0:(len(inputString) - 1)]
 	s := fmt.Sprintf("Now encrypting %s...", inputString)
 	println(s)
