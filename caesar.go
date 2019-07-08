@@ -1,19 +1,26 @@
 package main
 
 import (
-	"fmt"
-	s "strings"
+	"bufio"
+	"os"
+	"strings"
 )
 
 func main() {
 	alphabet := "abcdefghijklmnopqrstuvwxyz"
 	//shift by 5
 	cipher := "fghijklmnopqrstuvwxyzabcde"
-	string input_string = 
-	for i:=0; i<len(input_string); i++ {
-		position := input_string.Index(alphabet, input_string[i])
+
+	reader := bufio.NewReader(os.Stdin)
+	println("What would you like to encrypt?")
+	inputString, _ := reader.ReadString('\n')
+
+	var encrypted []string
+	for i := 0; i < len(inputString); i++ {
+		position := strings.Index(alphabet, string(inputString[i]))
+		newChar := string(cipher[position])
+		//println(newChar)
+		encrypted = append(encrypted, newChar)
 	}
-	
-
-
+	println(strings.Join(encrypted, ""))
 }
